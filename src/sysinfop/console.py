@@ -1,6 +1,13 @@
 import argparse
+import platform
+import sys
+from rich import print
 
+# App version
 version = "0.0.0beta"
+
+# 64bit platform detection
+is_64bit = sys.maxsize > 2**32
 
 parser = argparse.ArgumentParser(
     prog="sysinfop",
@@ -10,4 +17,8 @@ parser = argparse.ArgumentParser(
 
 
 def run():
-    args = parser.parse_args()
+    if is_64bit:
+        args = parser.parse_args()
+        print('[green]SUCCESS: 32bit system detected[/green]')
+    else:
+        print('[red]ERROR: 32bit system detected[/red]')
