@@ -1,10 +1,12 @@
 from rich.layout import Layout
 from rich.panel import Panel
+from .sysinfo import getSystemInfo
 
 layout = Layout()
+data = getSystemInfo()
 
 layout.split_column(
-    Layout(name="upper"),
+    Layout(name=f"{data.hostname}"),
     Layout(name="lower")
 )
 
