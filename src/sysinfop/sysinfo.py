@@ -1,3 +1,9 @@
+import platform
+import socket
+import re
+import uuid
+import psutil
+
 def getSystemInfo():
     try:
         info={}
@@ -10,6 +16,6 @@ def getSystemInfo():
         info['mac-address']=':'.join(re.findall('..', '%012x' % uuid.getnode()))
         info['processor']=platform.processor()
         info['ram']=str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
-        return json.loads(info)
+        return info
     except Exception as e:
         print(f"[red]ERROR: {e}[/red]")
