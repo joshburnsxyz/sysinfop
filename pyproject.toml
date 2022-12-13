@@ -10,6 +10,8 @@ packages = [{include = "sysinfop", from = "src"}]
 python = "^3.11"
 rich = "^12.6.0"
 
+[tool.poetry.scripts]
+sysinfop = { callable = "sysinfop:console.run" }
 
 [build-system]
 requires = ["poetry-core"]
