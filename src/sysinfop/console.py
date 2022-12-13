@@ -1,7 +1,10 @@
 import argparse
 import platform
 import sys
+
 from rich import print
+
+from .render import layout
 
 # App version
 version = "0.0.0beta"
@@ -20,5 +23,6 @@ def run():
     if is_64bit:
         args = parser.parse_args()
         print('[green]SUCCESS: 32bit system detected[/green]')
+        print(layout)
     else:
         print('[red]ERROR: 32bit system detected[/red]')
