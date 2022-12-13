@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sysinfop"
+version = "0.1.0"
+description = ""
+authors = ["Josh Burns <joshyburnss@gmail.com>"]
+readme = "README.rst"
+packages = [{include = "sysinfop", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
