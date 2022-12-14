@@ -12,7 +12,7 @@ p = data["platform"]
 P = data["processor"]
 r = data["ram"]
 
-layout = Panel(f"* {h}\n* IP: {i}\n* OS: {p}\n* CPU: {P}\n* RAM: {r}",
+layout = Panel(f"[bold]{h}[/bold]\n* IP: {i}\n* OS: {p}\n* CPU: {P}\n* RAM: {r}",
                expand=False,
                height=10,
                box=box)
