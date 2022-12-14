@@ -12,7 +12,11 @@ layout.split_column(
     lower
 )
 
+# Top banner, basic info
+banner.update(Panel(f"* {data["hostname"]}\n* IP: {data["ip-address"]}\n* OS: {data["platform"]}\n* CPU: {data["processor"]}", title=data["hostname"])
+
 layout["lower"].split_row(
     Layout(name="left"),
     Layout(name="right"),
 )
+
