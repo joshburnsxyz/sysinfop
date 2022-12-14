@@ -18,11 +18,13 @@ parser = argparse.ArgumentParser(
     epilog=f"sysinfop - vesion {version}"
 )
 
+## Define arguments to parse
+parser.add_argument('--verbose', '-V', action='store_true')
 
 def run():
     if is_64bit:
         args = parser.parse_args()
-        print('[green]SUCCESS: 32bit system detected[/green]')
         print(layout)
     else:
-        print('[red]ERROR: 32bit system detected[/red]')
+        print('[red]ERROR: System is 32 bit. Sysinfop requires a 64 bit system to run.[/red]')
+        
