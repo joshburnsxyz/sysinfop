@@ -7,7 +7,15 @@ Lightweight system info utility
 
 ## What does it look like?
 
-__FIXME: Add screenshot of console output__
+On a 2022 Macbook Air for example, it will output the following.
+
+``` shell
+  hostname.local
+  * IP: 127.0.0.1
+  * OS: Darwin
+  * CPU: arm
+  * RAM: 8 GB
+```
 
 ## How to use it
 
