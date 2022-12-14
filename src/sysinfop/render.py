@@ -17,4 +17,3 @@ banner.update(Panel(f"* {data["hostname"]}\n* IP: {data["ip-address"]}\n* OS: {d
 
 # Logo Section
 logo.update(Panel(f"{data["logo"]}")
-              # 
