@@ -18,9 +18,6 @@ parser = argparse.ArgumentParser(
     epilog=f"sysinfop - vesion {version}"
 )
 
-## Define arguments to parse
-parser.add_argument('--verbose', '-V', action='store_true')
-
 def run():
     if is_64bit:
         args = parser.parse_args()
