@@ -13,7 +13,7 @@ layout.split_column(
 )
 
 # System info section
-banner.update(Panel(f"* {data["hostname"]}\n* IP: {data["ip-address"]}\n* OS: {data["platform"]}\n* CPU: {data["processor"]}", title=data["hostname"]))
+banner.update(Panel(f"* {data["hostname"]}\n* IP: {data["ip-address"]}\n* OS: {data["platform"]}\n* CPU: {data["processor"]}\n* RAM: {data["ram"]}", title=data["hostname"]))
 
 # Logo Section
 logo.update(Panel(f"{data["logo"]}")
