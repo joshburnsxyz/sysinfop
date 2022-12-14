@@ -20,3 +20,4 @@ layout["lower"].split_row(
     Layout(name="right"),
 )
 
+lower["left"].update(data["logo"])
