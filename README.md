@@ -19,7 +19,19 @@ On a 2022 Macbook Air for example, it will output the following.
 
 ## How to use it
 
-__FIXME: Add usage instructions, one-liner to add to bashrc__
+Simply call `sysinfop` from your shell configuration.
+
+### bash
+
+``` shell
+$ echo "sysinfop" >> ~/.bashrc
+```
+
+### zsh
+
+``` shell
+$ echo "sysinfop" >> ~/.zshrc
+`
 
 ## How to install it
 
