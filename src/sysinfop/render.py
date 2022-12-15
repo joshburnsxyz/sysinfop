@@ -8,7 +8,7 @@ box = box.MINIMAL
 banner = f"[bold]{data["hostname"]}[/bold]"
 
 def render_item(label,data):
-  return f"[bold]{label}[/label]: {data}"
+  return f"[bold]{label}[/bold]: {data}"
 
 def render_string(data):
   str = ""
