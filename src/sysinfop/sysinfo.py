@@ -4,17 +4,6 @@ import re
 import uuid
 import psutil
 
-icon_map = {
-    "Windows": "windows-logo-here",
-    "Linux": "tux-logo-here",
-    "Darwin": "macos-logo-here",
-    "Java": "java-logo-here"
-}
-
-def getASCII(platf):
-    icon = icon_map[platf]
-    return icon
-
 def getSystemInfo():
     try:
         info={}
