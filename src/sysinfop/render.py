@@ -34,4 +34,5 @@ format_template = render_string([
 layout = Panel(format_template,
                expand=False,
                height=7,
-               box=box)
+               box=box,
+               justify="center")
