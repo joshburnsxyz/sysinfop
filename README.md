@@ -31,11 +31,15 @@ $ echo "sysinfop" >> ~/.bashrc
 
 ``` shell
 $ echo "sysinfop" >> ~/.zshrc
-`
+```
 
 ## How to install it
 
-__FIXME: Add install instructions__
+### Install from pip
+
+``` shell
+pip install sysinfop
+```
 
 ## Contributing
 
