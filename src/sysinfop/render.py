@@ -5,7 +5,7 @@ from .sysinfo import getSystemInfo
 data = getSystemInfo()
 box = box.MINIMAL
 
-banner = f"[bold]{data["hostname"]}[/bold]"
+banner = f"[bold]{data['hostname']}[/bold]"
 
 def render_item(label,data):
   return f"[bold]{label}[/bold]: {data}"
@@ -21,7 +21,6 @@ def render_string(data):
     str = s
   return s
 
-# format_template = f"{banner}\n* {render_item("IP", i)}\n* {render_item("OS", p)}\n* {render_item("CPU", P)}\n* {render_item("RAM", r)}\n* {render_item()}"
 format_template = render_string([
   ("IP", data["ip-address"]),
   ("OS", data["platform"]),
@@ -33,6 +32,5 @@ format_template = render_string([
 
 layout = Panel(format_template,
                expand=False,
-               height=7,
-               box=box,
-               justify="center")
+               height=8,
+               box=box)
