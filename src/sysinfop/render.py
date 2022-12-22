@@ -11,8 +11,7 @@ def render_item(label,data):
   return f"[bold]{label}[/bold]: {data}"
 
 def render_string(data):
-  str = ""
-  
+  str = f"{banner}\n"
   # Loop over list of tuples and pass each tuple to
   # the render_item() function. Join the results together
   # and return the resulting string.
