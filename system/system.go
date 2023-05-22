@@ -1,10 +1,7 @@
 package system
 
 import (
-	"encoding/json"
-	"fmt"
 	"os/user"
-
 	"github.com/zcalusic/sysinfo"
 )
 
