@@ -8,6 +8,8 @@ import (
 	"github.com/zcalusic/sysinfo"
 )
 
+var si sysinfo.Sysinfo
+
 // Return information about the current user.
 func GetCurrentUser() (&user.User,err) {
 	u, err := user.Current()
@@ -15,4 +17,10 @@ func GetCurrentUser() (&user.User,err) {
 		return &user.User{},err
 	}
 	return u,nil
+}
+
+// Return sysinfo object
+func GetSysInfo() (sysinfo.Sysinfo) {
+	si = sysinfo.GetSysInfo()
+	return si
 }
