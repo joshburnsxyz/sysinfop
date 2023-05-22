@@ -1,11 +1,17 @@
 package system
 
 import (
+	"fmt"
 	"os/user"
+	"encoding/json"
 	"github.com/zcalusic/sysinfo"
 )
 
-var si sysinfo.Sysinfo
+type ParsedData struct {
+	OSInfo string
+	MemInfo string
+	CPUInfo string
+}
 
 // Return information about the current user.
 func GetCurrentUser() (&user.User,err) {
@@ -17,7 +23,20 @@ func GetCurrentUser() (&user.User,err) {
 }
 
 // Return sysinfo object
-func GetSysInfo() (sysinfo.Sysinfo) {
-	si = sysinfo.GetSysInfo()
-	return si
+func GetSysInfo() (&ParsedData,err) {
+	si := sysinfo.GetSysInfo()
+	
+	// Create strings
+	osistr := fmt.Sprintf("%s %s - v%s", si.OS.Vendor, si.OS.Name, si.OS.Version)
+	memistr := fmt.Sprintf("%d", si.Memory.Size)
+	cpuistr := fmt.Sprintf("%d Cores /%d Threads", si.CPU.Cores, si.CPU.Threads)
+
+	// Build data object
+	p := ParsedData{
+		OSInfo: osistr,
+		MemInfo: memistr,
+		CPUInfo: cpuistr
+	}
+
+	return &p
 }
