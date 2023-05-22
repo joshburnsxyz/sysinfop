@@ -23,7 +23,7 @@ func GetCurrentUser() (&user.User,err) {
 }
 
 // Return sysinfo object
-func GetSysInfo() (&ParsedData,err) {
+func GetSysInfo() (&ParsedData) {
 	si := sysinfo.GetSysInfo()
 	
 	// Create strings
