@@ -3,4 +3,7 @@ BIN := sysinfop
 PREFIX := /usr
 
 sysinfop:
-	$(GOX) build -o ./sysinfop
+	$(GOX) build -o ./$(BIN)
+
+clean:
+	rm -f ./$(BIN)
