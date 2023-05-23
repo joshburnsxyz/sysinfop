@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"sysinfop/system"
 	tm "github.com/buger/goterm"
 )
@@ -10,16 +11,18 @@ func main() {
 	tm.Clear()
 
 	// get info
-	i := system.BuildSysInfo()
-
+	i,err := system.BuildSysInfo()
+	if err != nil {
+		log.Fatal(err)
+	}
 	// Create Box with 30% width of current screen, and height of 20 lines
-	box := tm.NewBox(30|tm.PCT, 20, 0)
+	box := tm.NewBox(30|tm.PCT, 5, 0)
 
 	// Print content to screen
-	fmt.Fprint("* %s\n* %s\n* %s\n", i.OSInfo, i.MemInfo, i.CPUInfo)
+	fmt.Fprint(box, fmt.Sprintf("* %s\n* %s\n* %s\n", i.OSInfo, i.MemInfo, i.CPUInfo))
 
 	// Move box to centre of screen
-	tm.Print(tm.MoveTo(box.String(), 40|tm.PCT, 40|tm.PCT))
+	tm.Print(tm.MoveTo(box.String(), 10|tm.PCT, 10|tm.PCT))
 
 	tm.Flush()
 }

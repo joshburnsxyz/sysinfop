@@ -24,7 +24,11 @@ func getCurrentUser() (*user.User,error) {
 
 // Return sysinfo object
 func BuildSysInfo() (*ParsedData,error) {
-	si := sysinfo.GetSysInfo()
+	// Get system info
+	var si sysinfo.SysInfo
+	si.GetSysInfo()
+
+	// get user data
 	u, err := getCurrentUser()
 	if err != nil {
 		return &ParsedData{},err
