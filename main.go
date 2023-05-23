@@ -10,7 +10,7 @@ func main() {
 	tm.Clear()
 
 	// get info
-	i := system.GetSysInfo()
+	i := system.BuildSysInfo()
 
 	// Create Box with 30% width of current screen, and height of 20 lines
 	box := tm.NewBox(30|tm.PCT, 20, 0)
@@ -20,4 +20,6 @@ func main() {
 
 	// Move box to centre of screen
 	tm.Print(tm.MoveTo(box.String(), 40|tm.PCT, 40|tm.PCT))
+
+	tm.Flush()
 }
