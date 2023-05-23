@@ -36,7 +36,7 @@ func BuildSysInfo() (*ParsedData,error) {
 
 	// Create strings
 	osistr := fmt.Sprintf("OS: %s - %s", si.OS.Name, si.OS.Release)
-	memistr := fmt.Sprintf("RAM: %d MB", si.Memory.Size)
+	memistr := fmt.Sprintf("RAM: %d MB @ %d MT/s", si.Memory.Size, si.Memory.Speed)
 	cpuistr := fmt.Sprintf("CPU: %d Cores / %d Threads", si.CPU.Cores, si.CPU.Threads)
 
 	// Build data object
