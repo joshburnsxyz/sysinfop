@@ -15,14 +15,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// Create Box with 30% width of current screen, and height of 20 lines
-	box := tm.NewBox(30|tm.PCT, 5, 0)
+	// Create Box
+	box := tm.NewBox(50|tm.PCT, 5, 0)
 
 	// Print content to screen
 	fmt.Fprint(box, fmt.Sprintf("* %s\n* %s\n* %s\n", i.OSInfo, i.MemInfo, i.CPUInfo))
 
-	// Move box to centre of screen
+	// Move box to position
 	tm.Print(tm.MoveTo(box.String(), 10|tm.PCT, 10|tm.PCT))
+
+	//Print new line after box
+	tm.Printf("\n")
 
 	tm.Flush()
 }
