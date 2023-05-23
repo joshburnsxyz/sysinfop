@@ -16,7 +16,7 @@ func main() {
 		log.Fatal(err)
 	}
 	// Create Box
-	box := tm.NewBox(50|tm.PCT, 7, 0)
+	box := tm.NewBox(30|tm.PCT, 7, 0)
 
 	// Print content to screen
 	fmt.Fprint(box, fmt.Sprintf("* %s\n* %s\n* %s\n* %s\n* %s\n* %s\n",
@@ -28,7 +28,7 @@ func main() {
 	i.MacInfo))
 
 	// Move box to position
-	tm.Print(tm.MoveTo(box.String(), 10|tm.PCT, 10|tm.PCT))
+	tm.Print(tm.MoveTo(box.String(), 0|tm.PCT, 10|tm.PCT))
 
 	//Print new line after box
 	tm.Printf("\n")
